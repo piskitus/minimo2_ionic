@@ -1,0 +1,31 @@
+<ion-view view-title="Subjects">
+  <ion-content>
+    <div class="row header">
+      <div class="col">Name</div>
+      <div class="col">Students</div>
+      <div class="col"></div>
+    </div>
+    <div class="row" ng-repeat="subject in subjects">
+      <div class="col">{{subject.name}}</div>
+      <div class="col">{{subject.students}}</div>
+      <div class="col"><button class="button button-balanced ion-plus-round" ng-click="AddStudent(student._id); selectSubject(subject)" type="submit"></button>
+<button class="button button-assertive ion-close-round" ng-click="deleteSubject(subject._id)" type="submit"></button></div>
+    </div>
+
+    <form>
+      <span class="input-label">###########################################################################</span>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Subject</span>
+          <input type="text" ng-model="newSubject.name">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Students</span>
+          <input type="text" ng-model="newSubject.students">
+        </label>
+        <button class="button button-block button-positive ion-plus-round" ng-click="createSubject() " type="submit"> create</button>
+        <button class="button button-block button-positive ion-plus-round" ng-click="addStudent() " type="submit"> edit</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

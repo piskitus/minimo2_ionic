@@ -1,0 +1,40 @@
+<div class="jumbotron text-center">
+    <p>{{ message }}</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-1">
+            <table class="table table-striped">
+                <tr class="info">
+                    <td>Name</td>
+                    <td>Students</td>
+                    <td></td>
+                </tr>
+                <tr ng-repeat="subject in subjects">
+                    <td>{{ subject.name }}</td>
+                    <td>{{ subject.students }} <button class="btn btn-success btn-sm" ng-click="AddStudent(student._id); selectSubject(subject)">+</button></td>
+                    <td><button class="btn btn-danger btn-sm" ng-click="deleteSubject(subject._id)">x</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-4 col-sm-offset-1 text-center">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg text-center" placeholder="Inserta un nombre de asignatura" ng-model="newSubject.name" required>
+                </div>
+                <button class="btn btn-primary btn-lg" ng-click="createSubject()" ng-disabled="myForm.$invalid || selected">Añadir Asignatura</button>
+            </form>
+            <form>
+                <div>
+                    <br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Añadir nombre estudiante" ng-model="newSubject.students" required>
+                <br>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg" ng-click="addStudent()" ng-disabled="myForm.$invalid || !selected">Añadir estudiante</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,43 @@
+<div class="jumbotron text-center">
+    <p>{{ message }}</p>
+</div>
+
+<div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-1">
+                <table class="table table-striped">
+                    <tr class="info">
+                        <td>Name</td>
+                        <td>Address</td>
+                        <td>Home phone</td>
+                        <td>Work phone</td>
+                        <td></td>
+                    </tr>
+                    <tr ng-repeat="student in students">
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.address }}</td>
+                        <td>{{ student.phones.home }}</td>
+                        <td>{{ student.phones.work }}</td>
+                        <td><button class="btn btn-danger btn-sm" ng-click="deleteStudent(student._id)">x</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-4 col-sm-offset-1 text-center">
+                <form name myForm>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Inserta un nombre" ng-model="newStudent.name" required>
+                        <br>
+                        <input type="text" class="form-control input-lg text-center" placeholder="Inserta una dirección" ng-model="newStudent.address" required>
+                        <br>
+                        <input type="number" class="form-control input-lg text-center" placeholder="Inserta un telefono de casa" ng-model="newStudent.phones.home" required>
+                        <br>
+                        <input type="number" class="form-control input-lg text-center" placeholder="Inserta un telefono de trabajo" ng-model="newStudent.phones.work" required>
+
+                    </div>
+                    <button class="btn btn-primary btn-lg" ng-click="createStudent()" ng-disabled="myForm.$invalid || selected">Añadir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

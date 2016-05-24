@@ -1,0 +1,37 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="angularRoutingApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Examen MEAN</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+</head>
+<body ng-controller="mainController">
+<div id="routes">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#home">Home</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#students" data-clicktrack="true">Students</a></li>
+                    <li><a href="#subjects" data-clicktrack="true">Subjects</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Aquí inyectamos las vistas -->
+    <div ng-view></div>
+
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="routes.js"></script>
+
+</body>
+</html>

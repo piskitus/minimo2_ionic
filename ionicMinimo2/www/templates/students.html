@@ -1,0 +1,42 @@
+<ion-view view-title="Students">
+  <ion-content>
+          <div class="row header">
+            <div class="col">Name</div>
+            <div class="col">Address</div>
+            <div class="col">Home phone</div>
+            <div class="col">Work Phone</div>
+            <div class="col"></div>
+          </div>
+          <div class="row" ng-repeat="student in students">
+            <div class="col">{{student.name}}</div>
+            <div class="col">{{student.address}}</div>
+            <div class="col">LK {{student.phones.home}}</div>
+            <div class="col">{{student.phones.work}}</div>
+            <div class="col"><button class="button button-assertive ion-close-round" ng-click="deleteStudent(student._id)" type="submit"></button></div>
+          </div>
+
+  <form>
+    <span class="input-label">###########################################################################</span>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Name</span>
+        <input type="text" ng-model="newStudent.name">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Direction</span>
+        <input type="text" ng-model="newStudent.address">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Phone home</span>
+        <input type="text" ng-model="newStudent.phones.home">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Phone work</span>
+        <input type="text" ng-model="newStudent.phones.work">
+      </label>
+      <button class="button button-block button-positive ion-plus-round" ng-click="createStudent() " type="submit"></button>
+    </div>
+
+  </form>
+  </ion-content>
+</ion-view>

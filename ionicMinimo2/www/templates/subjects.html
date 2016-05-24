@@ -1,11 +1,13 @@
 <ion-view view-title="Subjects">
   <ion-content>
+    <label>Search: <input ng-model="searchText"></label>
+
     <div class="row header">
       <div class="col">Name</div>
       <div class="col">Students</div>
       <div class="col"></div>
     </div>
-    <div class="row" ng-repeat="subject in subjects">
+    <div class="row" ng-repeat="subject in subjects | filter:searchText">
       <div class="col">{{subject.name}}</div>
       <div class="col">{{subject.students}}</div>
       <div class="col"><button class="button button-balanced ion-plus-round" ng-click="AddStudent(student._id); selectSubject(subject)" type="submit"></button>
